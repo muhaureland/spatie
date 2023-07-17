@@ -21,9 +21,12 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
-        $role = Role::create(['name' => 'writer']);
-        $permission = Permission::create(['name' => 'edit_articles']);
-        $role->givePermissionTo($permission);
+
+        // $role = Role::create(['name' => 'writer']);
+        // $permission = Permission::create(['name' => 'edit_articles']);
+        // $role->givePermissionTo($permission);
+
+        $this->call([UserRoleSeeder::class]);
 
     }
 }
